@@ -4,7 +4,7 @@ services:
     container_name: app
     build: ./docker/php
     volumes:
-      - ../laravel_vue_seating_chart:/var/www/html/
+      - ../laravel_vue_ts_seating_chart:/var/www/html/
 
   nginx:
     image: nginx
@@ -12,26 +12,25 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ../laravel_vue_seating_chart:/var/www/html/
+      - ../laravel_vue_ts_seating_chart:/var/www/html/
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - app
 
-  db:
+  postgres:
     image: postgres:12.2
-    container_name: db
+    container_name: postgres
+    restart: always
     environment:
-      TZ: "Asia/Tokyo"
-      POSTGRES_USER: "docker"
-      POSTGRES_PASSWORD: "docker"
-      POSTGRES_DB: "postgres_development"
-      DATABASE_HOST: "localhost"
+      TZ: Asia/Tokyo
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: postgres
     volumes:
       - ./docker/db/data:/var/lib/postgresql/data
-    #   - ./docker/db/sql:/docker-entrypoint-initdb.d
+      - ./docker/db/sql:/docker-entrypoint-initdb.d
     ports:
       - 5432:5432
-      # TODO:
   # mysql:
   #   image: mysql:5.7
   #   container_name: db-host
