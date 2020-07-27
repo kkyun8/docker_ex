@@ -19,4 +19,12 @@ https://qiita.com/nagi125/items/775e7ebda4718f61a330<br>
 https://qiita.com/kotarella1110/items/634f6fafeb33ae0f51dc<br>
 https://qiita.com/minato-naka/items/8b31d28823cabaa9487a<br>
 
+php posgresql install issue<br>
+https://qiita.com/wallkickers/items/47efb41dd200722a98fe<br>
+https://github.com/docker-library/php/issues/221<br>
+
+xdebug<br>
+https://qiita.com/gigosa/items/90431be7a6a79db78480<br>
+
 http://pyrasis.com/private/2014/11/30/publish-docker-for-the-really-impatient-book *韓国語<br>
+
